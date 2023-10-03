@@ -39,7 +39,7 @@ We also use the `context` package to implement a timeout if the server takes too
 4. Generate Go Code with `Protoc`:
 
 ```bash
-protoc -I proto/ proto/your_file.proto --go_out=paths=source_relative:proto --go-grpc_out=paths=source_relative:proto
+protoc -I proto/ proto/protoapi.proto --go_out=paths=source_relative:proto --go-grpc_out=paths=source_relative:proto
 ```
 
 
