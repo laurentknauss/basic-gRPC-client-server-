@@ -1,0 +1,39 @@
+
+
+syntax = "proto3"; 
+
+// this means that the generated Go code will have a package name of 'time_service' 
+// and will be placed in the same directory as the .proto file . 
+option go_package = "./;time_service"; 
+
+
+import "google/protobuf/duration.proto";
+
+
+
+service TimeService { 
+  rpc GetCurrentTime (TimeRequest) returns (TimeResponse); 
+  rpc GetServerUptime (ServerUptimeRequest) returns (ServerUptimeResponse);
+
+}
+
+message TimeRequest { 
+  string Value =1; 
+}
+message ServerUptimeRequest { 
+  string client_id =1 ; 
+}
+
+message TimeResponse { 
+     string Value  =  2;
+  
+  }
+
+
+
+message ServerUptimeResponse{ 
+     google.protobuf.Duration server_uptime = 1;
+  }
+
+
+
